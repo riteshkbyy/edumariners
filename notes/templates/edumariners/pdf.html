@@ -1,0 +1,20 @@
+<body>
+<div id="pdf-main-container">
+	<div id="pdf-loader">Loading document ...</div>
+	<div id="pdf-contents">
+		<canvas id="pdf-canvas" width="800" height="1000"></canvas>
+		<div id="page-loader">Loading page ...</div>
+		<div id="pdf-meta">
+			<div id="pdf-buttons">
+				<button class="nav-but" id="pdf-prev">Previous</button>
+				<button class="nav-but" id="pdf-next" >Next</button>
+				{% csrf_token %}
+				<form>
+							<input name="textbox1" id="number" type="number" onblur="goToThis(this.value) "/>
+			<button class="nav-but" id="pdf-no" >Next</button>
+					</form>
+			</div>
+			<div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
+		</div>
+	</div>
+</div>

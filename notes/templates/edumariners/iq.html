@@ -1,0 +1,27 @@
+{%extends 'edumariners/base.html'%}
+{% load staticfiles %}
+{% block scripthead %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="{% static 'pdf.js' %}"></script>
+	<script src="{% static 'pdf.worker.js' %}"></script>
+{% endblock scripthead %}
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'design.css' %}">
+{% endblock css %}
+{% block sidebar%}
+<div class="content-section">
+    <ul class="list-group">
+     {% for item in topic_name %}
+         <a class="list-group-item list-group-item-light" onclick="showPDF('http://127.0.0.1:8000/media/{{item.file_name}}')">{{item.topic_name}}</a>
+     {% endfor %}
+    </ul>
+</div>
+{% endblock sidebar %}
+
+{% block content %}
+	{% include 'edumariners/pdf.html' %}
+{% endblock content %}
+
+{% block script %}
+	<script src="{% static 'pdfscript.js' %}"></script>
+{% endblock script %}
