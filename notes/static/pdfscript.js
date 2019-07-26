@@ -108,6 +108,6 @@ str = Number(str)
 }
 
 function getPdf(name){
-    pdf_url= 'https://edumariners.herokuapp.com/media/'+ name.toString(10)
+    pdf_url= '/media/'+ name.toString(10)
     showPDF(pdf_url);
 }
