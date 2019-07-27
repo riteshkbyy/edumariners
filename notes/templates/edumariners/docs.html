@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'design.css' %}">
 {% endblock css %}
 {% block sidebar%}
-<div class="content-section">
+<div class="content-section" id="list-topic">
     <ul class="list-group">
      {% for item in topic_name %}
          <button class="list-group-item list-group-item-liht" onclick="getPdf('{{item.file_name}}')">{{item.topic_name}}</button>
@@ -19,9 +19,9 @@
 </div>
 
 {% endblock sidebar %}
-{% block content %}
+{% block pdf %}
 {% include 'edumariners/pdf.html' %}
-{% endblock content %}
+{% endblock pdf %}
 
 {% block script %}
 <script src="{% static 'pdfscript.js' %}"></script>

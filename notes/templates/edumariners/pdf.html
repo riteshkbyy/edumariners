@@ -1,20 +1,22 @@
 <body>
-<div id="pdf-main-container">
+<div id="pdf-main-container" >
 	<div id="pdf-loader">Loading document ...</div>
-	<div id="pdf-contents">
-		<canvas id="pdf-canvas" width="800" height="1000"></canvas>
+	<div id="pdf-contents" style="perspective-origin: center; align-content: center; ">
+		<canvas id="pdf-canvas" width="800" height="1000" style="margin-left: 5rem; margin-right: 5rem;" ></canvas>
 		<div id="page-loader">Loading page ...</div>
-		<div id="pdf-meta">
-			<div id="pdf-buttons">
-				<button class="nav-but" id="pdf-prev">Previous</button>
-				<button class="nav-but" id="pdf-next" >Next</button>
-				{% csrf_token %}
-				<form>
-							<input name="textbox1" id="number" type="number" onblur="goToThis(this.value) "/>
-			<button class="nav-but" id="pdf-no" >Next</button>
-					</form>
+		<div id="pdf-meta" style="margin-bottom: 1rem;">
+			<div id="pdf-buttons" style="margin-left: 5rem; margin-right: 5rem;">
+				<button class="nav-but" id="pdf-prev" style="width: 5.5rem; ">Previous</button>
+				<button class="nav-but" id="pdf-next" style="width: 4.5rem">Next</button>
+				<!-- {#% csrf_token %} -->
+				<form style="display: inline;">
+					<input name="textbox1" id="number" type="number" onblur="goToThis(this.value)" style="width: 4.2rem">
+					<button class="nav-but" id="pdf-no" style="width: 3.3rem" >Go</button>
+				</form>
+				<button class="nav-but" id="list-show" onclick="showList()" style="width: 8rem%">Show All Topics</button>
+			
+			<div id="page-count-container" style="display: inline;">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
 			</div>
-			<div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
 		</div>
 	</div>
 </div>

@@ -97,12 +97,12 @@ str = Number(str)
             }
         else{
             a= __TOTAL_PAGES.toString(10)
-        alert("Enter page number below "+a)
+        alert("Enter page number between 1 and "+a)
         }
            }
     else{
         alert("Enter a valid Page number")
-        showPage(__CURRENT_PAGE)
+        // showPage(__CURRENT_PAGE)
     }
 
 }
@@ -110,4 +110,10 @@ str = Number(str)
 function getPdf(name){
     pdf_url= '/media/'+ name.toString(10)
     showPDF(pdf_url);
+    $("#list-topic").hide();
+}
+
+function showList(){
+$("#pdf-contents").hide();
+$("#list-topic").show();
 }
