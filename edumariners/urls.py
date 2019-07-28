@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# from users import views as user_views
+from django.views.static import serve
+from . import*
 # from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
+    path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+	path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     path('', include('notes.urls'))
 ]
